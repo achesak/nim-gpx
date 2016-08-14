@@ -408,3 +408,9 @@ proc parseGPX*(data : string): GPX =
         g.tracks.add(parseGPXTrack(track))
         
     return g
+
+
+proc readGPX*(filename : string): GPX = 
+    ## Parses a GPX file from the given ``filename``.
+    
+    return parseGPX(readFile(filename))
